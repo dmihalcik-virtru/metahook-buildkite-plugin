@@ -4,19 +4,26 @@ author: https://github.com/ca-johnson
 configuration:
   properties:
     environment:
-      type: string
+      $ref: "#/$defs/sourcelist"
     post-artifact:
-      type: string
+      $ref: "#/$defs/sourcelist"
     post-checkout:
-      type: string
+      $ref: "#/$defs/sourcelist"
     post-command:
-      type: string
-    pre-artifact:
-      type: string
+      $ref: "#/$defs/sourcelist"
+    pre-artifact: 
+      $ref: "#/$defs/sourcelist"
     pre-checkout:
-      type: string
+      $ref: "#/$defs/sourcelist"
     pre-command:
-      type: string
+      $ref: "#/$defs/sourcelist"
     pre-exit:
-      type: string
+      $ref: "#/$defs/sourcelist"
   additionalProperties: false
+$defs:
+  sourcelist:
+    type:
+      - string
+      - array
+    items:
+      type: string
