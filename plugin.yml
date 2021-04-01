@@ -1,3 +1,29 @@
 name: Metahook
 description: Run commands as buildkite hooks on a per-step basis
 author: https://github.com/ca-johnson
+configuration:
+  properties:
+    environment:
+      $ref: "#/$defs/sourcelist"
+    post-artifact:
+      $ref: "#/$defs/sourcelist"
+    post-checkout:
+      $ref: "#/$defs/sourcelist"
+    post-command:
+      $ref: "#/$defs/sourcelist"
+    pre-artifact: 
+      $ref: "#/$defs/sourcelist"
+    pre-checkout:
+      $ref: "#/$defs/sourcelist"
+    pre-command:
+      $ref: "#/$defs/sourcelist"
+    pre-exit:
+      $ref: "#/$defs/sourcelist"
+  additionalProperties: false
+$defs:
+  sourcelist:
+    type:
+      - string
+      - array
+    items:
+      type: string

@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-set -euo pipefail
 
 BUILDKITE_METAHOOK_HOOKS_PATH="$(mktemp -d)"
 export BUILDKITE_METAHOOK_HOOKS_PATH
@@ -12,4 +11,5 @@ if grep -E 'BUILDKITE_PLUGIN_METAHOOK_.+(\.BAT|\.CMD)=' "${BUILDKITE_METAHOOK_HO
   exit 1
 fi
 
-"${BASH_SOURCE%/*}/run-hook.sh" "$(basename "${BASH_SOURCE[0]}")"
+hook_name=environment
+. "${BASH_SOURCE%/*}/run-hook.sh"

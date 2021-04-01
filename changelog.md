@@ -1,5 +1,10 @@
 # Changelog
 
+## v0.5.0
+
+- Sources files, doesn't run them. Probably should be an option
+- Allow multiple hooks of the same type
+
 ## v0.4.0
 
 - **Breaking change** Removed support for `command` metahook.
